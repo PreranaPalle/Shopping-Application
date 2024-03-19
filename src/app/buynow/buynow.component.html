@@ -1,0 +1,23 @@
+<div class="justify-content-center row">
+<div class="card flex-row w-75 h-75">
+    <div class="card-header ">
+    <img  class="img-thumbnail" [src]="product.link" alt="Card image cap" style="width: 120%;
+    height: 100%;display: block;
+" >
+</div>
+<div class="card-block px-2">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <div class="card-text">
+    <p>Gender:{{product.gender}}</p>
+      <p>Quantity:</p>
+      <select [(ngModel)]="selectedNumber">
+          <option value="" disabled selected default>Select the quantity for purchase</option>
+          <option *ngFor="let num of numbers" [value]="num">{{ num }}</option>
+        </select>
+        <p>Rs.{{ selectedNumber*numericalPart }}/-</p>
+    </div>
+    <button class="btn" routerLink="/pay" (click)="onpay()">Checkout</button>
+    </div>
+  </div>
+</div>

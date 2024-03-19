@@ -1,0 +1,56 @@
+<div class="justify-content-center row">
+    <div class="card flex-row w-50 h-75" >
+    <div class="card-block px-2">
+        <div class="card-body">
+          <h5 class="card-title">Checkout</h5>
+          <div class="card-text" *ngIf="!payClick" >
+            <h6>1.Delivery Address:</h6>
+            <div>{{user.address}}</div>
+            <h6>2.Select payment method:</h6>
+            <div>
+                <input type="radio" value="Credit Card" [ngModel]="mode" (change)="onModeChange($event)">Credit Card
+                <input type="radio" value="Debit Card" [ngModel]="mode" (change)="onModeChange($event)">Debit Card
+                <input type="radio" value="UPI" [ngModel]="mode" (change)="onModeChange($event)">UPI
+                <input type="radio" value="COD" [ngModel]="mode" (change)="onModeChange($event)">Cash On Delivery
+            </div>
+            <div>Amount to be paid: Rs.{{product}}/-</div>
+            <button class="btn" (click)="pay()">Proceed to Pay</button>
+        </div>
+        
+        <div *ngIf="payClick">
+        <ng-container *ngIf="mode=='UPI'" >
+          <div class="form-group">
+              <label>UPI Id:</label>
+              <input type="text" class="form-control" />
+          </div>
+          <button class="btn btn-primary" (click)="onproceed()">Proceed</button>
+      </ng-container>
+      <ng-container *ngIf="mode=='Credit Card' ||mode=='Debit Card'">
+          <div class="form-group">
+              <label>Card Number</label>
+              <input type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+              <label>CVV:</label>
+              <input type="text" class="form-control" />
+          </div>
+          <div class="form-group">
+              <label>Expiry Date:</label>
+              <input type="text" class="form-control" />
+          </div>
+          <button class="btn" (click)="onproceed()">Proceed</button>
+
+      </ng-container>
+      <ng-container *ngIf="mode=='COD'">
+        <button (click)="onproceed()">Proceed</button>
+      </ng-container>
+    </div>
+        
+        </div>
+      </div>
+    </div>
+    

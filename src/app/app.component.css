@@ -1,0 +1,6 @@
+.element{
+    color: black;
+}
+.element:hover{
+    color: blue ;
+}

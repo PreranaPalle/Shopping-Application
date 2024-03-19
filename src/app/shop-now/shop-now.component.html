@@ -1,0 +1,12 @@
+<button class="btn btn-success" (click)="onmenclick()" >Men's</button>
+<button class="btn btn-success" (click)="onwomenclick()" >Women's</button>
+<!-- it should not be navigated to a diff page but another component should be called here only.so,not using routerlink -->
+<div *ngIf="menclick">
+    <app-men></app-men>
+</div>
+<div *ngIf="womenclick">
+    <app-womens></app-womens>
+</div>
+
+
+

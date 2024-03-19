@@ -1,0 +1,42 @@
+.image{
+    padding: 50px;
+}
+.img{
+    padding: 50px;
+}
+.img-wrapper {
+    position: relative;
+  }
+  
+  .img-responsive {
+    width: 100%;
+    height: auto;
+  }
+  
+  .img-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  .img-overlay:before {
+    content: ' ';
+    display: block;
+    /* adjust 'height' to position overlay content vertically */
+    height: 50%;
+  }
+  .carousel-content {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    z-index: 20;
+    color: black;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  }
+  .custom-button{
+    background-color: orangered;
+    color: white;
+  }

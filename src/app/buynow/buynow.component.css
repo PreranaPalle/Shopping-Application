@@ -1,0 +1,4 @@
+:host::ng-deep .card-header{
+    width: 30% !important;
+    height: 30% !important;
+}

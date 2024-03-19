@@ -1,0 +1,28 @@
+<div class="row justify-content-center my-5">
+    <div class="col-4" *ngIf="!forgot">
+        <ng-container>
+            <label>Email:</label>
+            <input type="text" class="form-control" [(ngModel)]="emailid">
+            <label>Password:</label>
+            <input type="text" class="form-control" [(ngModel)]="password">
+            <button class="btn btn-primary" (click)="onlogin()">Login</button>
+            <br>
+            <a style="float: left;" (click)="onForgot()" >Forgot Password?</a>
+            <div style="float: right;">
+                <div>New User?</div>
+                <a routerLink="/login">Login</a>
+            </div>
+        </ng-container>
+    </div>
+    <div class="col-4" *ngIf="forgot">
+        <label>Email Id:</label>
+        <input type="text" class="form-control" [(ngModel)]="emailid">
+        <button (click)="ongenerate()" class="btn btn-primary">Send Verification Code</button>
+        <div *ngIf="generateotp">
+        <label>Verification Code:</label>
+        <input type="text" class="form-control" [(ngModel)]="otp">
+        <button type="submit" (click)="onVerify()" class="btn btn-primary">Submit</button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="row">
+  {{user|json}}
+    <div class="dropdown"> 
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort By
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="onAscSort()">Low to high</a>
+          <a class="dropdown-item" (click)="onDescSort()">High to Low</a>
+          <a class="dropdown-item" (click)="onRelevance()">Relevance</a>
+        </div>
+      </div>
+    <div class="col-md-3" *ngFor="let image of menData" style="padding: 30px;">
+        <img class="image" [src]=image.link>
+        <p>{{image.name}}</p>
+        <p>{{image.price}}</p>
+        <button class="btn btn-success" (click)="onCartClick(image)">Add to Cart</button>
+        <button class="btn btn-success">Buy Now</button>
+        {{share}}
+    </div>
+</div>
